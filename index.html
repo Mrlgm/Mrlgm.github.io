@@ -229,6 +229,178 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/29/JS的数据类型/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lgm">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Today">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/29/JS的数据类型/" itemprop="url">JS的数据类型</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-29T16:46:57+08:00">
+                2018-06-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>JS有七种数据类型：number string boolean symbol undefined null object<br>注意：没有 array 类型也没有 function 类型。</p>
+<h2 id="一、number"><a href="#一、number" class="headerlink" title="一、number"></a>一、number</h2><ul>
+<li>整数和小数（十进制）：1 : 1, 1.1 : 1.1, .1 : 0.1</li>
+<li>科学计数法：1.23e2 : 123</li>
+<li>二进制：0b11 : 3</li>
+<li>八进制：011 : 9（后来 ES5 添加了 0o11 语法）</li>
+<li>十六进制：0x11 : 17</li>
+</ul>
+<h2 id="二、string"><a href="#二、string" class="headerlink" title="二、string"></a>二、string</h2><ul>
+<li>空字符串：’’</li>
+<li>多行字符串：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var s = &apos;12345&apos; +</span><br><span class="line">           &apos;67890&apos; // 无回车符号</span><br><span class="line">或</span><br><span class="line">var s = `12345</span><br><span class="line">67890` // 含回车符号</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="三、boolean"><a href="#三、boolean" class="headerlink" title="三、boolean"></a>三、boolean</h2><ul>
+<li><p>乔治·布尔<br>乔治·布尔是英格兰数学家和哲学家、数理逻辑学先驱。<br>由于其在符号逻辑运算中的特殊贡献，很多计算机语言中将逻辑运算称为布尔运算，将其结果称为布尔值。<br>1864年，布尔冒着大雨步行两英里走到讲台，身着打湿的衣服为学生们授课。不久后，他就病倒了，得了重度感冒还发高烧。其妻错误地相信疾病需要用致病因子施救，因为布尔是淋雨水而感冒的，妻子于是用桶子装水淋到他身上。结果湿气进一步加剧了他的病情。1864年，12月8日，布尔死于肺部积水。<br>上面资料的来源是维基百科，请自行选择是否相信。</p>
+</li>
+<li><p>boolean 的取值<br>只有两个值：true 和 false<br>a &amp;&amp; b 在 a 和 b 都为 true 时，取值为 true；否则为 false<br>a || b 在 a 和 b 都为 false 时，取值为 false；否则为 true</p>
+</li>
+</ul>
+<h2 id="四、symbol"><a href="#四、symbol" class="headerlink" title="四、symbol"></a>四、symbol</h2><p>ES 6 引入了一个新的数据类型 Symbol</p>
+<ul>
+<li>symbol的用途就是：Symbol 可以创建一个独一无二的值（但并不是字符串）。</li>
+<li>symbol的作用：Symbol 生成一个全局唯一的值。<br><a href="https://zhuanlan.zhihu.com/p/22652486" target="_blank" rel="noopener">symbol是什么</a></li>
+</ul>
+<h2 id="五、undefined-和-null"><a href="#五、undefined-和-null" class="headerlink" title="五、undefined 和 null"></a>五、undefined 和 null</h2><p>都表示没有值，至于 JS 为什么有两个表示「没有值」的东西，可以从 JS 之父的 twitter 中知道当时他也挺纠结的：<a href="https://twitter.com/BrendanEich/status/333008305461006336" target="_blank" rel="noopener">https://twitter.com/BrendanEich/status/333008305461006336</a></p>
+<ul>
+<li><p>undefined：（规范）如果一个变量没有被赋值，那么这个变量的值就是 undefiend</p>
+</li>
+<li><p>null：（习俗）如果你想表示一个还没赋值的对象，就用 null。</p>
+</li>
+<li><p>如果你想表示一个还没赋值的字符串/数字/布尔/symbol，就用 undefined（但是实际上你直接 var xxx 一下就行了，不用写 var xxx = undefined）<br>一般来说null表示空对象，undefined表示空非对象</p>
+</li>
+</ul>
+<h2 id="六、object"><a href="#六、object" class="headerlink" title="六、object"></a>六、object</h2><p>除了object其他都是基本类型，object是复杂类型</p>
+<ul>
+<li>object 就是上面几种基本类型（无序地）组合在一起</li>
+<li><p>object 里面可以有 object</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">  var person = &#123;</span><br><span class="line">    name: &apos;Frank&apos;, </span><br><span class="line">    &apos;child&apos;: &#123;</span><br><span class="line">        name: &apos;Jack&apos;</span><br><span class="line">    &#125;, // 最后这个逗号可有可无</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>object 的 key 一律是字符串，不存在其他类型的 key</p>
+</li>
+<li>object[‘’] 是合法的</li>
+<li>object[‘key’] 可以写作 object.key</li>
+<li>注意 object.key 与 object[key] 不同</li>
+<li>delete object[‘key’]</li>
+<li>‘key’ in object</li>
+<li>for(var key in object)</li>
+</ul>
+<h2 id="七、typeof-操作符"><a href="#七、typeof-操作符" class="headerlink" title="七、typeof 操作符"></a>七、typeof 操作符</h2><p>typeof可以用来判断数据类型，但是存在两个bug</p>
+<ul>
+<li>typeof null的类型为’object’</li>
+<li>typeof function的类型为’function’,但是并没有function数据类型</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/09/HTML常用标签的使用/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1046,7 +1218,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
